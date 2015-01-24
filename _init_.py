@@ -6,7 +6,8 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     env = { 'page_title': 'Main Page' }
-    return render_template('layout.html', env=env)
+    env['output'] = 'Testing page'
+    return render_template('default.html', env=env)
 
 if __name__ == '__main__':
     app.run()
